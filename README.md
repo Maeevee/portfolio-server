@@ -64,7 +64,7 @@ fetch('/contact', {
 ```
 
 ## Credits
-This code was adapted from the [web-dev-projects](https://github.com/judygab/web-dev-projects.git) repository by [@judygab](https://github.com/judygab). Thank you, @judygab (https://github.com/judygab), for sharing the original code!
+This code was adapted from the [web-dev-projects](https://github.com/judygab/web-dev-projects.git) repository by [@judygab](https://github.com/judygab). Thank you, [@judygab](https://github.com/judygab), for sharing the original code!
 
 ## License
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
