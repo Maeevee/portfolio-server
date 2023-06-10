@@ -36,34 +36,8 @@ This is a Node.js server code that allows you to handle contact form submissions
 
 - If the email is sent successfully, the server will respond with a JSON object containing `{ code: 200, status: "Message Sent" }`. Otherwise, it will return the error details in the JSON response.
 
-## Frontend Integration
-If you have a frontend application that needs to send contact form submissions to this server, you can use the following example code:
-
-`// Make a POST request to the server's /contact endpoint
-fetch('/contact', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({
-    firstName: 'John',
-    email: 'john@example.com',
-    message: 'Hello, I would like to inquire about your services.',
-    phone: '1234567890', // optional
-  }),
-})
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    // Handle the response from the server
-  })
-  .catch(error => {
-    console.error(error);
-    // Handle any errors that occur during the request
-  });`
-
 ## Credits
-This code was adapted from the [web-dev-projects](https://github.com/judygab/web-dev-projects.git) repository by @judygab. Thank you, "judygab, for sharing the original code!
+This code was adapted from the [web-dev-projects](https://github.com/judygab/web-dev-projects.git) repository by @judygab . Thank you, @judygab , for sharing the original code!
 
 ## License
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
