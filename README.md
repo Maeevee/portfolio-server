@@ -39,29 +39,44 @@ This is a Node.js server code that allows you to handle contact form submissions
 ## Frontend Integration
 If you have a frontend application that needs to send contact form submissions to this server, you can use the following example code:
 ```
-// Make a POST request to the server's /contact endpoint
-fetch('/contact', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({
-    firstName: 'John',
-    email: 'john@example.com',
-    message: 'Hello, I would like to inquire about your services.',
-    phone: '1234567890', // optional
-  }),
-})
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    // Handle the response from the server
-  })
-  .catch(error => {
+const form = document.querySelector('#contact-form');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const firstName = document.querySelector('#firstName').value;
+  const email = document.querySelector('#email').value;
+  const message = document.querySelector('#message').value;
+  const phone = document.querySelector('#phone').value;
+
+  try {
+    const response = await fetch('/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        firstName,
+        email,
+        message,
+        phone,
+      }),
+    });
+
+    if (response.ok) {
+      // Success
+      console.log('Message sent successfully');
+    } else {
+      // Error
+      const errorData = await response.json();
+      console.error(errorData);
+    }
+  } catch (error) {
     console.error(error);
-    // Handle any errors that occur during the request
-  });
+  }
+});
 ```
+Make sure to replace the form field selectors (`#firstName`, `#email`, `#message`, `#phone`) with the appropriate selectors for your HTML markup.
 
 ## Credits
 This code was adapted from the [web-dev-projects](https://github.com/judygab/web-dev-projects.git) repository by [@judygab](https://github.com/judygab). Thank you, [@judygab](https://github.com/judygab), for sharing the original code!
