@@ -1,4 +1,4 @@
-# React_portfolio_server
+# React portfolio server
 This is a Node.js server code that allows you to handle contact form submissions and send emails using Nodemailer. It provides an API endpoint `/contact` to receive contact form data and send an email with the submitted information.
 
 ## Prerequisites
